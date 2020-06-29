@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  couchdb:
+    image: couchdb:latest
+    restart: always
+    ports:
+      - "127.0.0.1:5984:5984"
+    volumes:
+      - "couchdb-data:/opt/couchdb/data"
+    environment:
+      COUCHDB_USER: docker
+      COUCHDB_PASSWORD: docker
+
+volumes:
+  couchdb-data:
